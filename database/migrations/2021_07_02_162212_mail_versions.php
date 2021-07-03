@@ -16,8 +16,9 @@ class MailVersions extends Migration
         Schema::create('mail_versions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignId('mails_id')->references('id')->on('mails')->onUpdate('cascade')->onDelete('cascade');
-            $table->softDeletes();
             $table->foreignId('file_id')->references('id')->on('files')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 

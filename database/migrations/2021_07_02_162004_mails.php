@@ -21,8 +21,9 @@ class Mails extends Migration
             $table->string('title');
             $table->string('origin');
             $table->dateTime('mail_created_at');
-            $table->softDeletes();
             $table->dateTime('archived');
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 

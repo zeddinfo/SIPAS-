@@ -23,6 +23,7 @@ class Users extends Migration
             $table->foreignId('levels_id')->references('id')->on('levels')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('department_id')->references('id')->on('departments')->onUpdate('cascade')->onDelete('cascade');
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 

@@ -17,8 +17,9 @@ class MailAttributeTransactions extends Migration
             $table->bigIncrements('id');
             $table->foreignId('mail_id')->references('id')->on('mails')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('mail_attributes_id')->references('id')->on('mail_attributes')->onUpdate('cascade')->onDelete('cascade');
-            $table->softDeletes();
             $table->string('type');
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 

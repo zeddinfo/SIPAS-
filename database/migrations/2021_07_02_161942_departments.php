@@ -16,8 +16,9 @@ class Departments extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->bigIncrements('id')->index();
             $table->string('name');
-            $table->softDeletes();
             $table->foreignId('depends_on_id')->references('id')->on('departments')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
